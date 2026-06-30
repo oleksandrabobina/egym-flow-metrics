@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EGYM Core Realm — Flow Metrics</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:#0c0f1a;color:#e4eaf5;font-family:'Segoe UI',system-ui,sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;}
+h1{font-size:1.7rem;font-weight:800;letter-spacing:-.03em;margin-bottom:8px;text-align:center;}
+h1 span{color:#60a5fa;}
+.sub{color:#7a87a0;font-size:.9rem;margin-bottom:48px;text-align:center;}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;width:100%;max-width:700px;}
+.card{background:#141828;border:1px solid #252c45;border-radius:14px;padding:24px 28px;text-decoration:none;color:#e4eaf5;transition:all .2s;position:relative;overflow:hidden;}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--c);}
+.card:hover{transform:translateY(-3px);border-color:var(--c);box-shadow:0 8px 30px rgba(0,0,0,.4);}
+.card .icon{font-size:1.8rem;margin-bottom:12px;}
+.card h2{font-size:1.05rem;font-weight:700;margin-bottom:5px;}
+.card p{font-size:.78rem;color:#7a87a0;line-height:1.5;}
+.updated{text-align:center;margin-top:40px;font-size:.75rem;color:#4a5568;}
+@media(max-width:500px){.grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<h1>EGYM Core Realm — <span>Flow Metrics</span></h1>
+<p class="sub">Monthly dashboards · FL1 Tasks &amp; FL2 Epics · Jun 2025 → latest</p>
+<div class="grid">
+  <a href="core-workouts.html" class="card" style="--c:#34d399">
+    <div class="icon">💪</div>
+    <h2>Core Workouts</h2>
+    <p>Cycle Time · Throughput · WIP · Bugs · Tech %</p>
+  </a>
+  <a href="mms-connect.html" class="card" style="--c:#60a5fa">
+    <div class="icon">⚙️</div>
+    <h2>MMS Connect</h2>
+    <p>Cycle Time · Throughput · WIP · Bugs · Tech %</p>
+  </a>
+  <a href="operator-experience.html" class="card" style="--c:#f97316">
+    <div class="icon">🎛️</div>
+    <h2>Operator Experience</h2>
+    <p>Cycle Time · Throughput · WIP · Bugs · Tech %</p>
+  </a>
+  <a href="users-and-locations.html" class="card" style="--c:#f472b6">
+    <div class="icon">📍</div>
+    <h2>Users &amp; Locations</h2>
+    <p>Cycle Time · Throughput · WIP · Bugs · Tech %</p>
+  </a>
+</div>
+<p class="updated">Auto-updated monthly · Source: Nave + Jira via Notion</p>
+</body>
+</html>
