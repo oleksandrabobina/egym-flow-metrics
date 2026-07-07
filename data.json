@@ -1169,6 +1169,29 @@
               25
             ]
           }
+        },
+        "genius": {
+          "name": "Genius Core / Data Science",
+          "color": "#e879f9",
+          "fl1": {
+            "ct": [],
+            "tp": [],
+            "wR": [],
+            "wY": [],
+            "wG": [],
+            "bC": [],
+            "bR": [],
+            "tech": []
+          },
+          "fl2": {
+            "ct": [],
+            "del": [],
+            "wip": [],
+            "wR": [],
+            "wY": [],
+            "wG": [],
+            "tech": []
+          }
         }
       }
     },
