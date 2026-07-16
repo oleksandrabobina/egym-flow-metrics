@@ -69,17 +69,17 @@ btn.addEventListener('click', () => {
   const reader = new FileReader();
   reader.onload = () => {
     const base64 = reader.result.split(',')[1];
+    // Note: the webhook endpoint doesn't return CORS headers, so a normal cross-origin
+    // fetch() would be blocked by the browser before it ever leaves the page. We use
+    // mode:'no-cors' (a "simple request", default text/plain body) so the browser will
+    // actually send it — we just can't read the response back, so we treat "fetch did
+    // not throw" as success and can't distinguish server-side failures here.
     fetch('https://api.dataleap.ai/api/webhooks/whsec_mrfbyg3j37nqqz1ji452', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      mode: 'no-cors',
       body: JSON.stringify({ source: 'upload_button', filename: selectedFile.name, content_base64: base64 })
-    }).then(r => {
-      if (r.ok) {
-        setStatus('ok', '✅ Uploaded! The dashboard will update automatically in a few minutes — no need to wait here.');
-      } else {
-        setStatus('err', '❌ Something went wrong (status ' + r.status + '). Please try again or use Google Drive instead.');
-        btn.disabled = false;
-      }
+    }).then(() => {
+      setStatus('ok', '✅ Sent! The dashboard will update automatically in a few minutes — no need to wait here.');
     }).catch(() => {
       setStatus('err', '❌ Network error — please try again or use Google Drive instead.');
       btn.disabled = false;
